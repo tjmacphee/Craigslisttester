@@ -1,1 +1,4 @@
-webdriver.chrome.driver=<path to chrome driver>
+webdriver.chrome.driver = <path to chrome driver>
+
+login.username = 
+login.password = 
