@@ -1,5 +1,6 @@
 package fgcuvladtyler;
 
+import java.util.Objects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,13 +23,15 @@ import java.util.Properties;
 import java.util.Set;
 
 public class TestAccountCreation {
-    private WebDriver driver;
+    public WebDriver driver;
     private WebDriverWait wait;
 
     @BeforeClass
     public void setUp() {
+      System.out.println("in setup");
         Properties props = new Properties();
-        try (FileInputStream input = new FileInputStream(getClass().getClassLoader().getResource("config.properties").getFile())) {
+       try (FileInputStream input = new FileInputStream(
+           Objects.requireNonNull(getClass().getClassLoader().getResource("config.properties")).getFile())) {
             props.load(input);
             String webdriverPath = props.getProperty("webdriver.chrome.driver");
             System.setProperty("webdriver.chrome.driver", webdriverPath);
