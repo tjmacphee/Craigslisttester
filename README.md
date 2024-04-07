@@ -13,6 +13,7 @@
 
   - Copy the `config.properties_example` in `src/test/resources/` & rename to `config.properties`
   - Set chrome driver path
+  - Set login and password with premade email & desired password
   - Open a terminal and enter the following
     - `cd runescapetester`
     - `mvn test`
