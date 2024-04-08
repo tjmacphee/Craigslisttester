@@ -1,4 +1,4 @@
-# Runescapetester
+# Zillowtester
 
 ## Getting started
 
@@ -10,12 +10,10 @@
 
 ---
 #### Running the tests
-
-  - Copy the `config.properties_example` in `src/test/resources/` & rename to `config.properties`
-  - Set chrome driver path
-  - Set login and password with premade email & desired password
-  - Open a terminal and enter the following
-    - `cd runescapetester`
+- Copy the `config.properties_example` in `src/test/resources/` & rename to `config.properties`
+- Set chrome driver path
+- Open a terminal and enter the following
+    - `cd zillowtester`
     - `mvn test`
 
 #### Common issues
