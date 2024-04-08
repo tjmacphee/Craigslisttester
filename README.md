@@ -1,4 +1,4 @@
-# Runescapetester
+# Zillowtester
 
 ## Getting started
 
@@ -16,7 +16,7 @@
 - Copy the `config.properties_example` in `src/test/resources/` & rename to `config.properties`
 - Set chrome driver path
 - Open a terminal and enter the following
-    - `cd runescapetester`
+    - `cd zillowtester`
     - `mvn test`
 
 #### Common issues
