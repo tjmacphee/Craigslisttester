@@ -1,4 +1,4 @@
-webdriver.chrome.driver = <path to chrome driver>
+webdriver.chrome.driver = C:\\Users\\user\\pathto\\chromedriver.exe
 
 login.username = 
 login.password = 
