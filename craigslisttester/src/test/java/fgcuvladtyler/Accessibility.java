@@ -3,7 +3,7 @@ package fgcuvladtyler;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HomePageTests extends SetupTests {
+public class Accessibility extends Setup {
 
     @Test (priority = 1)
     public void verifyHomePageTitle() {
