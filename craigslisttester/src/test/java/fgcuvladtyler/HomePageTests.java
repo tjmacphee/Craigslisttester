@@ -9,7 +9,7 @@ public class HomePageTests extends SetupTests {
     public void verifyHomePageTitle() {
         driver.get("https://www.craigslist.com");
         sleep(15000);
-        // String title = driver.getTitle();
-        // Assert.assertTrue(title.contains(""));
+        
+        // TODO: implement some kind of homepage test
     }
 }
