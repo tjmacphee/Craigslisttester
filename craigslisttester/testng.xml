@@ -10,12 +10,14 @@
                     <include name="testForgotPasswordFunctionality"/>
                 </methods>
             </class>
-            <!-- <class name="fgcuvladtyler.Accessibility">
+            <class name="fgcuvladtyler.ListingsAndSearch">
                 <methods>
-                    <include name="yourTestMethod1"/>
-                    <include name="yourTestMethod2"/>
+                    <include name="testSearchBar"/>
+                    <include name="testCategoryFilter"/>
+                    <include name="testLocationFilter"/>
+                    <include name="testListingDetails"/>
                 </methods>
-            </class> -->
+            </class>
         </classes>
     </test>
 </suite>

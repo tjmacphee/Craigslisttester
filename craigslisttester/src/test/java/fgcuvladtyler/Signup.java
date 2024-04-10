@@ -8,10 +8,11 @@ import org.testng.Assert;
 
 public class Signup extends Setup {
   /**
-   * This test case navigates to the sign up page, creates an account, logs in, and tests the forgot password functionality.
+   * This test case navigates to the sign up page, creates an account, logs in,
+   * and tests the forgot password functionality.
    */
 
-  @Test (priority = 1)
+  @Test(priority = 1)
   public void testSignUpPage() {
     System.out.println("Navigating to the sign up page...");
     String url = "https://accounts.craigslist.org/login";
@@ -19,36 +20,43 @@ public class Signup extends Setup {
     Assert.assertEquals(driver.getCurrentUrl(), url, "The current URL does not match the expected URL.");
   }
 
-  @Test (priority = 2)
+  @Test(priority = 2)
   public void testSignUpFunctionality() {
     System.out.println("Creating account...");
 
-    // Wait for the email input field to be visible on the page, then enter the email address
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='emailAddress']"))).sendKeys("testemail@test.com");
+    // Wait for the email input field to be visible on the page, then enter the
+    // email address
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='emailAddress']")))
+        .sendKeys("testemail@test.com");
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='create']"))).click();
 
     // Wait for the success div to be visible on the page
-    WebElement successDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alert-success")));
+    WebElement successDiv = wait
+        .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alert-success")));
     Assert.assertTrue(successDiv.isDisplayed(), "The success div is not displayed on the page.");
   }
 
-  @Test (priority = 3)
+  @Test(priority = 3)
   public void testLoginInFunctionality() {
     System.out.println("Signing in...");
 
     driver.get("https://accounts.craigslist.org/login");
 
-    // Wait for the email and password input fields to be visible on the page, then enter the login credentials
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']"))).sendKeys(config.getProperty("login.username"));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputPassword']"))).sendKeys(config.getProperty("login.password"));
+    // Wait for the email and password input fields to be visible on the page, then
+    // enter the login credentials
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']")))
+        .sendKeys(config.getProperty("login.username"));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputPassword']")))
+        .sendKeys(config.getProperty("login.password"));
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='login']"))).click();
 
     // Assert that there's a text that says "home of login.username"
-    WebElement homeText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(), 'home of " + config.getProperty("login.username") + "')]")));
+    WebElement homeText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        By.xpath("//a[contains(text(), 'home of " + config.getProperty("login.username") + "')]")));
     Assert.assertTrue(homeText.isDisplayed(), "The home text is not displayed on the page.");
   }
 
-  @Test (priority = 4)
+  @Test(priority = 4)
   public void testForgotPasswordFunctionality() {
     System.out.println("Testing forgot password functionality...");
 
@@ -56,17 +64,20 @@ public class Signup extends Setup {
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(), 'log out')]"))).click();
 
     // Wait for forgot password link
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(), 'Forgot password?')]"))).click();
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(), 'Forgot password?')]")))
+        .click();
 
     // Wait for the email input field
     WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='email']")));
     emailInput.sendKeys("testemail@test.com");
 
     // Click the button with "Reset Password" text
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(), 'Reset password')]"))).click();
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(), 'Reset password')]")))
+        .click();
 
     // Wait for the success div to be visible on the page
-    WebElement successDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alert-success")));
+    WebElement successDiv = wait
+        .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alert-success")));
     Assert.assertTrue(successDiv.isDisplayed(), "The success div is not displayed on the page.");
   }
 }
