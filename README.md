@@ -59,6 +59,12 @@
     - `cd craigslisttester`
     - `mvn test`
 
+#### Viewing test reports
+To view the report, head to [emailable-report.html](craigslisttester/target/surefire-reports/emailable-report.html), and open it inside your web browser
+  - To do this, right-click the file & choose `'Open in File Explorer'/'Open in Finder'`, then open it in the browser.
+
+In case of a test failure, view the [TestSuite.txt](craigslisttester/target/surefire-reports/TestSuite.txt) for a error log w/ stack trace
+
 #### Common issues
   - `mvn command is not recognized as an internal or external command`
     - Maven is missing from your system path [Maven/Java Path setup](https://www.youtube.com/watch?v=RfCWg5ay5B0https://www.youtube.com/watch?v=RfCWg5ay5B0)
