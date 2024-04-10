@@ -15,22 +15,22 @@ import java.util.Properties;
 public class Setup {
     public WebDriver driver = new ChromeDriver();
     public static WebDriverWait wait;
+    public static Properties config;
 
     @BeforeSuite
     public void setUp() {
        try (FileInputStream input = new FileInputStream(Objects.requireNonNull(Setup.class.getClassLoader().getResource("config.properties")).getFile())) {
-            Properties props = new Properties();
-            props.load(input);
-            String webdriverPath = props.getProperty("webdriver.chrome.driver");
+            config = new Properties();
+            config.load(input);
+            String webdriverPath = config.getProperty("webdriver.chrome.driver");
             System.setProperty("webdriver.chrome.driver", webdriverPath);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
-
         driver.manage().window().maximize();
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public void sleep(int milliseconds) {
