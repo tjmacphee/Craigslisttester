@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class Setup {
-    public WebDriver driver;
+    public WebDriver driver = new ChromeDriver();
     public static WebDriverWait wait;
 
     @BeforeSuite
@@ -27,7 +27,7 @@ public class Setup {
             ex.printStackTrace();
         }
 
-        driver = new ChromeDriver();
+
         driver.manage().window().maximize();
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
