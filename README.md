@@ -10,42 +10,42 @@
 
 ---
 ### Tests covered:
-1. User Registration and Authentication
+1. User Registration and Authentication [Signup.java](craigslisttester/src/test/java/fgcuvladtyler/Signup.java)
    - TestSignUpPage: Test if the signup page loads correctly.
    - TestSignUpFunctionality: Ensure that users can sign up with valid details.
-   - TestLoginPage: Verify that the login page is accessible and fields are interactable.
-   - TestLoginFunctionality: Check login functionality with correct and incorrect credentials.
-2. Listings & Search Functionality
+   - TestLoginFunctionality: Check login functionality with credentials.
+   - TestForgotPasswordFunctionality: Check forgot password functionality.
+2. Listings & Search Functionality [ListingsAndSearch.java](craigslisttester/src/test/java/fgcuvladtyler/ListingsAndSearch.java)
    - TestSearchBar: Verify that the search bar returns results based on keyword input.
    - TestCategoryFilter: Test the functionality of category-based filtering.
    - TestLocationFilter: Ensure location-based filtering works as expected.
    - TestListingDetails: Verify that clicking on a listing opens the details page with correct information.
-3. Posting Listings
+3. Posting Listings [Posting.java](craigslisttester/src/test/java/fgcuvladtyler/Posting.java)
    - TestPostListingPage: Check if the post listing page loads correctly.
    - TestPostListingFunctionality: Ensure users can create a listing with valid details.
    - TestEditListing: Verify that users can edit their listings after posting.
    - TestDeleteListing: Ensure users can delete their listings.
-4. User Profile and Settings
+4. User Profile and Settings [Profile.java](craigslisttester/src/test/java/fgcuvladtyler/Profile.java)
    - TestProfilePage: Verify that the user profile page loads correctly.
    - TestProfileUpdate: Test updating user profile information.
    - TestChangePassword: Ensure users can change their password.
    - TestEmailNotificationsSettings: Verify users can update their email notification preferences.
-5. Messaging and Communication
+5. Messaging and Communication [Messaging.java](craigslisttester/src/test/java/fgcuvladtyler/Messaging.java)
    - TestMessageListPage: Ensure the user’s message list page loads correctly.
    - TestSendMessage: Verify users can send messages to listing owners.
    - TestReceiveMessage: Ensure users can receive messages.
    - TestDeleteMessage: Verify users can delete messages from their inbox.
-6. Image Uploads and Management
+6. Image Uploads and Management [ImageUploads.java](craigslisttester/src/test/java/fgcuvladtyler/ImageUploads.java)
    - TestImageUpload: Verify users can upload images with their listings.
    - TestImageDeletion: Ensure users can delete images from their listings.
    - TestImageDisplay: Verify that images are correctly displayed in listings.
    - TestImageLimit: Ensure there's a limit to the number of images per listing.
-7. Navigation and UI Elements
+7. Navigation and UI Elements [NavigationAndResponsiveness.java](craigslisttester/src/test/java/fgcuvladtyler/NavigationAndResponsiveness.java)
    - TestHeaderLinks: Verify that header links (home, my account, post a listing, etc.) work.
    - TestFooterLinks: Check that footer links (about, terms of use, privacy policy, etc.) are accessible.
    - TestMobileResponsive: Verify the website is responsive on mobile devices.
    - TestBreadcrumbNavigation: Test the functionality of breadcrumb navigation for ease of use.
-8. Accessibility compliance
+8. Accessibility compliance [Accessibility.java](craigslisttester/src/test/java/fgcuvladtyler/Accessibility.java)
    - TestScreenReaderCompatibility: Verify the site's compatibility with screen readers.
    - TestKeyboardNavigation: Ensure that the website can be navigated using keyboard commands alone.
    - TestContrastRatio: Check that text and background color contrasts meet WCAG.
