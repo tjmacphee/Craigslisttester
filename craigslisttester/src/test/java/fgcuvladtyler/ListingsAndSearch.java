@@ -13,15 +13,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ListingsAndSearch extends Setup {
     /**
-     * TestSearchBar: Verify that the search bar returns results based on keyword input.
-   - TestCategoryFilter: Test the functionality of category-based filtering.
-   - TestLocationFilter: Ensure location-based filtering works as expected.
-   - TestListingDetails: Verify that clicking on a listing opens the details page with correct information.
+     * This test class will test the search bar, category filter, location filter, and listing details.
      */
     
     @Test (priority = 1)
     public void testSearchBar() {
-        driver.get("https://www.craigslist.com");
+        driver.get().get("https://www.craigslist.com");
         WebElement searchBar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder,'search craigslist')]")));
         searchBar.sendKeys("macbook air", Keys.RETURN);
         
@@ -36,6 +33,7 @@ public class ListingsAndSearch extends Setup {
         WebElement categorySelector = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'category-selector')]")));
         categorySelector.click();
 
+        // TODO: Error not interactable?
         WebElement category = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//span[contains(text(),'appliances')]")));
         String categoryText = category.getText();
         category.click();
@@ -58,6 +56,7 @@ public class ListingsAndSearch extends Setup {
         WebElement locationPicker = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'subarea-selector')]")));
         locationPicker.click();
 
+        // TODO: Vlad to make this selector more dynamic
         WebElement location = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//span[contains(text(),'collier co')]")));
         String locationText = location.getText();
         location.click();

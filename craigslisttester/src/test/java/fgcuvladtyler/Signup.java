@@ -14,16 +14,13 @@ public class Signup extends Setup {
 
   @Test(priority = 1)
   public void testSignUpPage() {
-    System.out.println("Navigating to the sign up page...");
     String url = "https://accounts.craigslist.org/login";
-    driver.get(url);
-    Assert.assertEquals(driver.getCurrentUrl(), url, "The current URL does not match the expected URL.");
+    driver.get().get(url);
+    Assert.assertEquals(driver.get().getCurrentUrl(), url, "The current URL does not match the expected URL.");
   }
 
   @Test(priority = 2)
   public void testSignUpFunctionality() {
-    System.out.println("Creating account...");
-
     // Wait for the email input field to be visible on the page, then enter the
     // email address
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='emailAddress']")))
@@ -38,9 +35,7 @@ public class Signup extends Setup {
 
   @Test(priority = 3)
   public void testLoginInFunctionality() {
-    System.out.println("Signing in...");
-
-    driver.get("https://accounts.craigslist.org/login");
+    driver.get().get("https://accounts.craigslist.org/login");
 
     // Wait for the email and password input fields to be visible on the page, then
     // enter the login credentials
@@ -58,8 +53,6 @@ public class Signup extends Setup {
 
   @Test(priority = 4)
   public void testForgotPasswordFunctionality() {
-    System.out.println("Testing forgot password functionality...");
-
     // Click logout button
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(), 'log out')]"))).click();
 
