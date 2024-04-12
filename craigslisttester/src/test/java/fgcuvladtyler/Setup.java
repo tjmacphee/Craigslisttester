@@ -54,6 +54,7 @@ public class Setup {
     public void tearDownClass() {
         if (driver.get() != null) {
             driver.get().quit();
+            driver.remove();
         }
     }
 }

@@ -22,6 +22,8 @@
                 <methods>
                     <include name="testPostListingPage"/>
                     <include name="testPostListingFunctionality"/>
+                    <include name="testEditListing"/>
+                    <include name="testDeleteListing"/>
                 </methods>
             </class>
         </classes>
