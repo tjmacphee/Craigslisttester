@@ -19,8 +19,9 @@ public class Posting extends Setup {
      */
 
     @Test (priority = 1)
-    public void testPostListingPage() {
+    public void testPostListingPage() {   
         driver.get().get("https://accounts.craigslist.org/login");
+        sleep(8000);
         // Wait for the email and password input fields to be visible on the page, then
         // enter the login credentials
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']")))
@@ -42,6 +43,8 @@ public class Posting extends Setup {
 
     @Test (priority = 2)
     public void testPostListingFunctionality() {
+        // TODO: check for 'reuse last post details' option, skip 1st + next popup.
+
         // Wait for the presence of ul.selection-list and pick the first li
         WebElement categoryList = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[contains(@class,'selection-list')]//li")));
         categoryList.click();
