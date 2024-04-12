@@ -133,8 +133,8 @@ public class Posting extends Setup {
         sleep(2000);
         driver.get().get("https://accounts.craigslist.org/login/home");
 
-        // Make sure accthp_postings table is present and has a row
-        WebElement postingsTable = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='accthp_postings']")));
+        // Make sure table contains class accthp_postings table is present and has a row
+        WebElement postingsTable = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[contains(@class,'accthp_postings')]")));
         List<WebElement> rows = postingsTable.findElements(By.tagName("tr"));
 
         Assert.assertTrue(rows.size() > 0, "The postings table does not have any rows.");
