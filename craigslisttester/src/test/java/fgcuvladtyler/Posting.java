@@ -42,7 +42,24 @@ public class Posting extends Setup {
 
     @Test (priority = 2)
     public void testPostListingFunctionality() {
-        // TODO: check for 'reuse last post details' option, skip 1st + next popup.
+
+        // Wait for the presence of strong element with text 'Re-use selected data from your previous posting', click skip button if present
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//strong[contains(text(),'Re-use selected data from your previous posting')]")));
+            WebElement skipButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'skip')]")));
+            skipButton.click();
+        } catch (org.openqa.selenium.TimeoutException e) {
+            System.out.println("No previous posting data found, proceeding without it.");
+        }
+
+        // If there is a <p>please limit each posting to a single area and category, once per 48 hours</p>, click the button with text 'continue' text
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[contains(text(),'please limit each posting to a single area and category, once per 48 hours')]")));
+            WebElement continueButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'continue')]")));
+            continueButton.click();
+        } catch (org.openqa.selenium.TimeoutException e) {
+            System.out.println("No limit message found, proceeding without it.");
+        }
 
         // Wait for the presence of ul.selection-list and pick the first li
         WebElement categoryList = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[contains(@class,'selection-list')]//li")));
@@ -53,7 +70,6 @@ public class Posting extends Setup {
             WebElement bypassStep = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[span[text()='bypass this step']]")));
             bypassStep.click();
         } catch (org.openqa.selenium.TimeoutException e) {
-            // The element was not found within the wait time, handle as needed
             System.out.println("Bypass step not available, proceeding without it.");
         }
 
@@ -142,7 +158,7 @@ public class Posting extends Setup {
     @Test (priority = 3)
     public void testEditListing() {
         // Continue from current page, click the input where value is 'edit' button any first list in row
-        WebElement editButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value='edit']")));
+        WebElement editButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='go'][@value='edit']")));
         editButton.click();
 
         // Find button with text 'edit post'
@@ -180,7 +196,7 @@ public class Posting extends Setup {
         driver.get().get("https://accounts.craigslist.org/login/home");
 
         // Find the first input with value 'delete' and click it
-        WebElement deleteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value='delete']")));
+        WebElement deleteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='go'][@value='delete']")));
         deleteButton.click();
 
         // Find the <b> tag that contains "This posting has been deleted from craigslist"

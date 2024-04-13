@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="CraigslistSuite" parallel="classes" thread-count="3">
+<suite name="CraigslistSuite" parallel="classes" thread-count="4">
     <test name="ComprehensiveTests">
         <classes>
             <class name="fgcuvladtyler.Signup">
@@ -26,6 +26,13 @@
                     <include name="testDeleteListing"/>
                 </methods>
             </class>
+            <class name="fgcuvladtyler.Profile">
+                <methods>
+                    <include name="testProfilePage"/>
+                    <include name="testDraftsPage"/>
+                    <include name="testSearchesPage"/>
+                    <include name="testSettingsPage"/>
+                </methods>
         </classes>
     </test>
 </suite>

@@ -27,9 +27,9 @@
    - TestDeleteListing: Ensure users can delete their listings.
 4. User Profile and Settings [Profile.java](craigslisttester/src/test/java/fgcuvladtyler/Profile.java)
    - TestProfilePage: Verify that the user profile page loads correctly.
-   - TestProfileUpdate: Test updating user profile information.
-   - TestChangePassword: Ensure users can change their password.
-   - TestEmailNotificationsSettings: Verify users can update their email notification preferences.
+   - TestDraftsPage: Verify that the drafts page loads correctly.
+   - TestSearchesPage: Verify that the searches page loads correctly.
+   - TestSettingsPage: Verify that the settings page loads correctly.
 5. Messaging and Communication [Messaging.java](craigslisttester/src/test/java/fgcuvladtyler/Messaging.java)
    - TestMessageListPage: Ensure the user’s message list page loads correctly.
    - TestSendMessage: Verify users can send messages to listing owners.
