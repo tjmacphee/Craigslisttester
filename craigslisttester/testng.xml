@@ -33,6 +33,7 @@
                     <include name="testSearchesPage"/>
                     <include name="testSettingsPage"/>
                 </methods>
+            </class>
         </classes>
     </test>
 </suite>
