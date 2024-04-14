@@ -9,29 +9,29 @@ public class AboutSites extends Setup {
 
   @Test (priority = 1)
   public void testAboutCraigslistTitle() {
-    driver.get().get("https://www.craigslist.org/about/sites");
+    driver.get("https://www.craigslist.org/about/sites");
     sleep(2000);
     String expectedTitle = "craigslist > sites";
-    String actualTitle = driver.get().getTitle();
+    String actualTitle = driver.getTitle();
     Assert.assertEquals(actualTitle, expectedTitle, "The title does not match the expected title.");
   }
 
   @Test (priority = 2)
   public void testAboutCraigslistContent() {
     sleep(2000);
-    driver.get().get("https://www.craigslist.org/about/sites");
+    driver.get("https://www.craigslist.org/about/sites");
     sleep(2000);
     String expectedContent = "craigslist sites worldwide";
-    String actualContent = driver.get().findElement(By.xpath("//h1")).getText();
+    String actualContent = driver.findElement(By.xpath("//h1")).getText();
     Assert.assertEquals(actualContent, expectedContent, "The content does not match the expected content.");
   }
 
 
   @Test (priority = 3)
   public void testAboutCraigslistFooter() {
-    driver.get().get("https://www.craigslist.org/about/sites");
+    driver.get("https://www.craigslist.org/about/sites");
     sleep(2000);
-    WebElement footer = driver.get().findElement(By.tagName("footer"));
+    WebElement footer = driver.findElement(By.tagName("footer"));
     java.util.List<WebElement> footerLinks = footer.findElements(By.tagName("a"));
     String[] expectedLinks = {
       "https://www.craigslist.org/about/help/",
@@ -51,9 +51,9 @@ public class AboutSites extends Setup {
 
   @Test (priority = 4)
   public void mapTest() {
-    driver.get().get("https://www.craigslist.org/about/sites");
+    driver.get("https://www.craigslist.org/about/sites");
     sleep(2000);
-    WebElement mapElement = driver.get().findElement(By.xpath("//*[@id='map']"));
+    WebElement mapElement = driver.findElement(By.xpath("//*[@id='map']"));
     Assert.assertTrue(mapElement.isDisplayed(), "The map is not displayed on the page.");
   }
 }

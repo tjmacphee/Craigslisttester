@@ -43,7 +43,7 @@ public class ListingsAndSearch extends Setup {
 
     @Test (priority = 3)
     public void testLocationFilter() {
-        driver.get().get("https://fortmyers.craigslist.org/search/sss?query=macbook%20air#search=1~gallery~0~2");
+        driver.get("https://fortmyers.craigslist.org/search/sss?query=macbook%20air#search=1~gallery~0~2");
         sleep(4000);
         // Reset the category from above to test to first index
         WebElement categorySelector = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'category-selector')]")));
