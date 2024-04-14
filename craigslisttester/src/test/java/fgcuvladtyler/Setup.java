@@ -4,23 +4,21 @@ import java.util.Objects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
 public class Setup {
-    protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    protected WebDriver driver; // No longer using ThreadLocal
     protected WebDriverWait wait;
     protected static Properties config;
 
     @BeforeClass
     public void setUpClass() {
+        // Load configuration only once using double-checked locking
         if (config == null) {
             synchronized (Setup.class) {
                 if (config == null) {
@@ -36,10 +34,10 @@ public class Setup {
             }
         }
 
-        WebDriver localDriver = new ChromeDriver();
-        driver.set(localDriver);
-        driver.get().manage().window().maximize();
-        wait = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
+        // Initialize the WebDriver
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public void sleep(int milliseconds) {
@@ -52,9 +50,9 @@ public class Setup {
 
     @AfterClass
     public void tearDownClass() {
-        if (driver.get() != null) {
-            driver.get().quit();
-            driver.remove();
+        if (driver != null) {
+            driver.quit();
+            driver = null; // Clear the driver instance
         }
     }
 }

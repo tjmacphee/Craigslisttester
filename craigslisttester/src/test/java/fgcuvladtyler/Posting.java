@@ -19,7 +19,7 @@ public class Posting extends Setup {
 
     @Test (priority = 1)
     public void testPostListingPage() {   
-        driver.get().get("https://accounts.craigslist.org/login");
+        driver.get("https://accounts.craigslist.org/login");
         sleep(8000);
         // Wait for the email and password input fields to be visible on the page, then
         // enter the login credentials
@@ -31,13 +31,13 @@ public class Posting extends Setup {
 
         sleep(2000);
 
-        driver.get().get("https://www.craigslist.com");
+        driver.get("https://www.craigslist.com");
 
         // find & click the post tag
         WebElement postListing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='post']")));
         postListing.click();
 
-        Assert.assertTrue(driver.get().getCurrentUrl().startsWith("https://post.craigslist.org/"), "The current URL does not match the expected URL.");
+        Assert.assertTrue(driver.getCurrentUrl().startsWith("https://post.craigslist.org/"), "The current URL does not match the expected URL.");
     }
 
     @Test (priority = 2)
@@ -100,11 +100,11 @@ public class Posting extends Setup {
         locationText += " zip code";
 
         // Open a new tab using JavaScript
-        ((JavascriptExecutor)driver.get()).executeScript("window.open()");
-        ArrayList<String> tabs = new ArrayList<String>(driver.get().getWindowHandles());
-        driver.get().switchTo().window(tabs.get(1)); // Switch to the new tab
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1)); // Switch to the new tab
 
-        driver.get().get("https://www.google.com");
+        driver.get("https://www.google.com");
         WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@name='q']")));
         search.sendKeys(locationText, Keys.RETURN);
         sleep(3000);
@@ -123,7 +123,7 @@ public class Posting extends Setup {
             }
         }
 
-        driver.get().switchTo().window(tabs.get(0));
+        driver.switchTo().window(tabs.get(0));
 
         // Find input name 'postal' and enter the zip code
         WebElement postal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='postal']")));
@@ -146,7 +146,7 @@ public class Posting extends Setup {
         publish.click();
 
         sleep(2000);
-        driver.get().get("https://accounts.craigslist.org/login/home");
+        driver.get("https://accounts.craigslist.org/login/home");
 
         // Make sure table contains class accthp_postings table is present and has a row
         WebElement postingsTable = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[contains(@class,'accthp_postings')]")));
@@ -193,7 +193,7 @@ public class Posting extends Setup {
 
     @Test (priority = 4)
     public void testDeleteListing() {
-        driver.get().get("https://accounts.craigslist.org/login/home");
+        driver.get("https://accounts.craigslist.org/login/home");
 
         // Find the first input with value 'delete' and click it
         WebElement deleteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='go'][@value='delete']")));

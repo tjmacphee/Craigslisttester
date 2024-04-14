@@ -16,7 +16,7 @@ public class ListingsAndSearch extends Setup {
     
     @Test (priority = 1)
     public void testSearchBar() {
-        driver.get().get("https://www.craigslist.com");
+        driver .get("https://www.craigslist.com");
         WebElement searchBar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder,'search craigslist')]")));
         searchBar.sendKeys("macbook air", Keys.RETURN);
         
