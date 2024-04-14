@@ -144,6 +144,18 @@ public class Posting extends Setup {
         WebElement publish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'publish')]")));
         publish.click();
 
+        // If there's a button with text 'continue', click it & sleep for 20 so user can confirm listing
+        try {
+            WebElement continueButton2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'continue')]")));
+            // find input name="pn_number" & enter config.phone
+            WebElement phoneNumber = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='pn_number']")));
+            phoneNumber.sendKeys(config.getProperty("phone"));
+            continueButton2.click();
+            sleep(20000);
+        } catch (org.openqa.selenium.TimeoutException e) {
+            System.out.println("No continue button found, proceeding without it.");
+        }
+
         sleep(2000);
         driver.get("https://accounts.craigslist.org/login/home");
 
