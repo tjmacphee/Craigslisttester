@@ -40,7 +40,6 @@
                     <include name="verifyFooterLinks"/>
                     <include name="testLanguageLinksText"/>
                     <include name="testLogo"/>
-
                 </methods>
             </class>
             <class name="fgcuvladtyler.AboutSites">
@@ -50,7 +49,6 @@
                     <include name="testAboutCraigslistLinks"/>
                     <include name="testAboutCraigslistFooter"/>
                     <include name="mapTest"/>
-
                 </methods>
             </class>
             <class name="fgcuvladtyler.EventCalendar">

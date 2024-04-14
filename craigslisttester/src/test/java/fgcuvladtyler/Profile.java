@@ -15,7 +15,6 @@ public class Profile extends Setup {
      @Test (priority = 1)
     public void testProfilePage() {
         driver.get("https://accounts.craigslist.org/login");
-        sleep(8000);
         // Wait for the email and password input fields to be visible on the page, then
         // enter the login credentials
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']")))
