@@ -55,7 +55,7 @@ public class ListingsAndSearch extends Setup {
         locationPicker.click();
 
         // Find the div.items, then click on the second button
-        WebElement location = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'items')]//span[contains(@class,'label')])[3]")));
+        WebElement location = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'items')]//span[contains(@class,'label')])[2]")));
         String locationText = location.getText();
         location.click();
 

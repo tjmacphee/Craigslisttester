@@ -20,7 +20,6 @@ public class Posting extends Setup {
     @Test (priority = 1)
     public void testPostListingPage() {   
         driver.get("https://accounts.craigslist.org/login");
-        sleep(8000);
         // Wait for the email and password input fields to be visible on the page, then
         // enter the login credentials
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']")))
@@ -107,9 +106,9 @@ public class Posting extends Setup {
         driver.get("https://www.google.com");
         WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@name='q']")));
         search.sendKeys(locationText, Keys.RETURN);
-        sleep(3000);
 
         // Wait for the carousel to load (use a specific identifier for your carousel)
+        // TODO: Improve this, g-scrolling-carousel is not a good identifier and not always available
         WebElement carousel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("g-scrolling-carousel")));
         // General XPath to select any div elements within the carousel
         List<WebElement> allDivs = carousel.findElements(By.xpath(".//div"));
