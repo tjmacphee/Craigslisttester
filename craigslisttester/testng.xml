@@ -33,6 +33,35 @@
                     <include name="testSearchesPage"/>
                     <include name="testSettingsPage"/>
                 </methods>
+            </class>
+            <class name="fgcuvladtyler.Homepage">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                    <include name="verifyFooterLinks"/>
+                    <include name="testLanguageLinksText"/>
+                    <include name="testLogo"/>
+
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.AboutSites">
+                <methods>
+                    <include name="testAboutCraigslistTitle"/>
+                    <include name="testAboutCraigslistContent"/>
+                    <include name="testAboutCraigslistLinks"/>
+                    <include name="testAboutCraigslistFooter"/>
+                    <include name="mapTest"/>
+
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.EventCalendar">
+                <methods>
+                    <include name="testEventCalendarLink"/>
+                    <include name="eventCalendarFavoriteButtonTest"/>
+                    <include name="testEventCalendarSearch"/>
+                    <include name="testEventsCheckBox"/>
+
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
