@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="CraigslistSuite" parallel="classes" thread-count="4">
+<suite name="CraigslistSuite">
     <test name="ComprehensiveTests">
         <classes>
             <class name="fgcuvladtyler.Signup">
@@ -59,7 +59,6 @@
                     <include name="eventCalendarFavoriteButtonTest"/>
                     <include name="testEventCalendarSearch"/>
                     <include name="testEventsCheckBox"/>
-
                 </methods>
             </class>
         </classes>
