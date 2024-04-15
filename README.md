@@ -48,7 +48,7 @@
 8. About Section [AboutSection.java](craigslisttester/src/test/java/fgcuvladtyler/AboutSection.java)
    - TestAboutSection: Verify the about page loads.
    - TestTOS: Verify TOS page loads.
-   - TestFAQ: Verify FAQ page loads
+   - TestFrequentlyAskedQuestions: Verify FAQ page loads
    - TestPrivacyPolicy: Verify Privacy Policy page loads.
 
 ---
