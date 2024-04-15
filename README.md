@@ -31,11 +31,20 @@
    - TestSearchesPage: Verify that the searches page loads correctly.
    - TestSettingsPage: Verify that the settings page loads correctly.
 5. Web Page Sites [WorldWideSites.java](craigslisttester/src/test/java/fgcuvladtyler/WorldWideSites.java)
-
+   - TestAboutCraigslistTitle: Verify Title is correct.
+   - TestAboutCraigslistContent: Verify Content is present on page.
+   - TestAboutCraigslistFooter: Verify footer links are correct.
+   - TestMapTest: Verify the map is present on load.
 6. Homepage [Homepage.java](craigslisttester/src/test/java/fgcuvladtyler/Homepage.java)
-
+   - TestVerifyHomePageTitle: Verify homepage title is correct.
+   - TestVerifyFooterLinks: Verify footer links are correct.
+   - TestLanguageLinksText: Verify support for multiple languages.
+   - TestLogo: Verify logo is present.
 7. Events & Calendar [EventsCalendar.java](craigslisttester/src/test/java/fgcuvladtyler/EventsCalendar.java)
-
+   - TestEventCalendarLink: Test calendar events link works.
+   - TestEventCalendarFavoriteButtonTest: Test favorites button works.
+   - TestEventCalendarSearch: Test calendar/events search works.
+   - TestEventsCheckBox: Test filter checkboxes work.
 8. About Section [AboutSection.java](craigslisttester/src/test/java/fgcuvladtyler/AboutSection.java)
    - TestAboutSection: Verify the about page loads.
    - TestTOS: Verify TOS page loads.
