@@ -26,7 +26,7 @@ public class Homepage extends Setup {
     }
     @Test (priority = 1)
     public void verifyFooterLinks() {
-       // driver.get().get("https://www.craigslist.com");
+        driver.get().get("https://fortmyers.craigslist.org/");
         sleep(1500);
 
         WebElement footer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("footer")));
