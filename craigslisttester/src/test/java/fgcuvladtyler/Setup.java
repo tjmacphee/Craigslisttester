@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class Setup {
-    protected WebDriver driver; // No longer using ThreadLocal
+    protected WebDriver driver;
     protected WebDriverWait wait;
     protected static Properties config;
 
@@ -52,7 +52,7 @@ public class Setup {
     public void tearDownClass() {
         if (driver != null) {
             driver.quit();
-            driver = null; // Clear the driver instance
+            driver = null;
         }
     }
 }
