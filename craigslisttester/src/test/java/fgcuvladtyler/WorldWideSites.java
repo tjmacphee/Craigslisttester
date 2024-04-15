@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
-public class AboutSites extends Setup {
+public class WorldWideSites extends Setup {
 
   @Test (priority = 1)
   public void testAboutCraigslistTitle() {
@@ -56,4 +56,5 @@ public class AboutSites extends Setup {
     WebElement mapElement = driver.findElement(By.xpath("//*[@id='map']"));
     Assert.assertTrue(mapElement.isDisplayed(), "The map is not displayed on the page.");
   }
+
 }

@@ -42,7 +42,7 @@
                     <include name="testLogo"/>
                 </methods>
             </class>
-            <class name="fgcuvladtyler.AboutSites">
+            <class name="fgcuvladtyler.WorldWideSites">
                 <methods>
                     <include name="testAboutCraigslistTitle"/>
                     <include name="testAboutCraigslistContent"/>
@@ -57,6 +57,15 @@
                     <include name="eventCalendarFavoriteButtonTest"/>
                     <include name="testEventCalendarSearch"/>
                     <include name="testEventsCheckBox"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.AboutSection">
+                <methods>
+                    <include name="testAboutSection"/>
+                    <include name="testTermofUse"/>
+                    <include name="FAQ"/>
+                    <include name="testPrivacyPolicy"/>
+                    <include name="testHelp"/>
                 </methods>
             </class>
         </classes>
