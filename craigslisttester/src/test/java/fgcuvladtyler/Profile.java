@@ -14,8 +14,7 @@ public class Profile extends Setup {
 
      @Test (priority = 1)
     public void testProfilePage() {
-        driver.get().get("https://accounts.craigslist.org/login");
-        sleep(8000);
+        driver.get("https://accounts.craigslist.org/login");
         // Wait for the email and password input fields to be visible on the page, then
         // enter the login credentials
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmailHandle']")))
@@ -26,7 +25,7 @@ public class Profile extends Setup {
 
         sleep(2000);
 
-        Assert.assertEquals(driver.get().getCurrentUrl(), "https://accounts.craigslist.org/login/home", "The current URL does not match the expected URL.");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://accounts.craigslist.org/login/home", "The current URL does not match the expected URL.");
     }
 
     @Test (priority = 2)
@@ -37,7 +36,7 @@ public class Profile extends Setup {
 
         sleep(2000);
 
-        Assert.assertEquals(driver.get().getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=drafts", "The current URL does not match the expected URL.");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=drafts", "The current URL does not match the expected URL.");
     }
 
     @Test (priority = 3)
@@ -48,7 +47,7 @@ public class Profile extends Setup {
 
         sleep(2000);
 
-        Assert.assertEquals(driver.get().getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=searches", "The current URL does not match the expected URL.");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=searches", "The current URL does not match the expected URL.");
     }
 
     @Test (priority = 4)
@@ -59,6 +58,6 @@ public class Profile extends Setup {
 
         sleep(2000);
 
-        Assert.assertEquals(driver.get().getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=settings", "The current URL does not match the expected URL.");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://accounts.craigslist.org/login/home?show_tab=settings", "The current URL does not match the expected URL.");
     }
 }

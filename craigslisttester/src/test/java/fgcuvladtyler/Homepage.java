@@ -13,11 +13,11 @@ public class Homepage extends Setup {
     @Test (priority = 2)
     public void verifyHomePageTitle() {
         sleep(1500);
-        driver.get().get("https://fortmyers.craigslist.org/");
+        driver.get("https://fortmyers.craigslist.org/");
         sleep(1500);
-        driver.get().findElement(By.xpath("//title[text()='craigslist: fort myers jobs, apartments, for sale, services, community, and events']"));
+        driver.findElement(By.xpath("//title[text()='craigslist: fort myers jobs, apartments, for sale, services, community, and events']"));
         String expectedTitle = "craigslist: fort myers jobs, apartments, for sale, services, community, and events";
-        String actualTitle = driver.get().getTitle();
+        String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle, "The title does not match the expected title.");
 
 
@@ -26,7 +26,7 @@ public class Homepage extends Setup {
     }
     @Test (priority = 1)
     public void verifyFooterLinks() {
-        driver.get().get("https://fortmyers.craigslist.org/");
+       // driver.get("https://www.craigslist.com");
         sleep(1500);
 
         WebElement footer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("footer")));
@@ -62,12 +62,12 @@ public class Homepage extends Setup {
     @Test(priority = 3)
     public void testLanguageLinksText() {
         // Navigate to the webpage you want to test
-        driver.get().get("https://www.craigslist.com");
+        driver.get("https://www.craigslist.com");
 
         sleep(4000);
 
         // Find the language dropdown menu
-        WebElement langDropdown = driver.get().findElement(By.id("chlang"));
+        WebElement langDropdown = driver.findElement(By.id("chlang"));
         sleep(2000);
         Select select = new Select(langDropdown);
         sleep(2000);
@@ -102,9 +102,9 @@ public class Homepage extends Setup {
     public void testLogo() {
         // Navigate to the webpage you want to tests
         // Find the logo element
-        driver.get().get("https://www.craigslist.com");
+        driver.get("https://www.craigslist.com");
         sleep(4000);
-        WebElement logo = driver.get().findElement(By.id("logo"));
+        WebElement logo = driver.findElement(By.id("logo"));
 
         // Get the anchor element within the logo
         WebElement anchor = logo.findElement(By.tagName("a"));

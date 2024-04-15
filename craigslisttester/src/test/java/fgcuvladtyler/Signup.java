@@ -15,8 +15,8 @@ public class Signup extends Setup {
   @Test(priority = 1)
   public void testSignUpPage() {
     String url = "https://accounts.craigslist.org/login";
-    driver.get().get(url);
-    Assert.assertEquals(driver.get().getCurrentUrl(), url, "The current URL does not match the expected URL.");
+    driver.get(url);
+    Assert.assertEquals(driver.getCurrentUrl(), url, "The current URL does not match the expected URL.");
   }
 
   @Test(priority = 2)
@@ -35,7 +35,7 @@ public class Signup extends Setup {
 
   @Test(priority = 3)
   public void testLoginInFunctionality() {
-    driver.get().get("https://accounts.craigslist.org/login");
+    driver.get("https://accounts.craigslist.org/login");
 
     // Wait for the email and password input fields to be visible on the page, then
     // enter the login credentials
