@@ -1,0 +1,73 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CraigslistSuite">
+    <test name="ComprehensiveTests">
+        <classes>
+            <!-- <class name="fgcuvladtyler.Signup">
+                <methods>
+                    <include name="testSignUpPage"/>
+                    <include name="testSignUpFunctionality"/>
+                    <include name="testLoginInFunctionality"/>
+                    <include name="testForgotPasswordFunctionality"/>
+                </methods>
+            </class> -->
+            <class name="fgcuvladtyler.ListingsAndSearch">
+                <methods>
+                    <include name="testSearchBar"/>
+                    <include name="testCategoryFilter"/>
+                    <include name="testLocationFilter"/>
+                    <include name="testListingDetails"/>
+                </methods>
+            </class>
+            <!-- <class name="fgcuvladtyler.Posting">
+                <methods>
+                    <include name="testPostListingPage"/>
+                    <include name="testPostListingFunctionality"/>
+                    <include name="testEditListing"/>
+                    <include name="testDeleteListing"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.Profile">
+                <methods>
+                    <include name="testProfilePage"/>
+                    <include name="testDraftsPage"/>
+                    <include name="testSearchesPage"/>
+                    <include name="testSettingsPage"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.Homepage">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                    <include name="verifyFooterLinks"/>
+                    <include name="testLanguageLinksText"/>
+                    <include name="testLogo"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.WorldWideSites">
+                <methods>
+                    <include name="testAboutCraigslistTitle"/>
+                    <include name="testAboutCraigslistContent"/>
+                    <include name="testAboutCraigslistLinks"/>
+                    <include name="testAboutCraigslistFooter"/>
+                    <include name="mapTest"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.EventCalendar">
+                <methods>
+                    <include name="testEventCalendarLink"/>
+                    <include name="eventCalendarFavoriteButtonTest"/>
+                    <include name="testEventCalendarSearch"/>
+                    <include name="testEventsCheckBox"/>
+                </methods>
+            </class>
+            <class name="fgcuvladtyler.AboutSection">
+                <methods>
+                    <include name="testAboutSection"/>
+                    <include name="testTermofUse"/>
+                    <include name="FAQ"/>
+                    <include name="testPrivacyPolicy"/>
+                    <include name="testHelp"/>
+                </methods>
+            </class> -->
+        </classes>
+    </test>
+</suite>
