@@ -30,26 +30,26 @@
    - TestDraftsPage: Verify that the drafts page loads correctly.
    - TestSearchesPage: Verify that the searches page loads correctly.
    - TestSettingsPage: Verify that the settings page loads correctly.
-5. Messaging and Communication [Messaging.java](craigslisttester/src/test/java/fgcuvladtyler/Messaging.java)
-   - TestMessageListPage: Ensure the user’s message list page loads correctly.
-   - TestSendMessage: Verify users can send messages to listing owners.
-   - TestReceiveMessage: Ensure users can receive messages.
-   - TestDeleteMessage: Verify users can delete messages from their inbox.
-6. Image Uploads and Management [ImageUploads.java](craigslisttester/src/test/java/fgcuvladtyler/ImageUploads.java)
-   - TestImageUpload: Verify users can upload images with their listings.
-   - TestImageDeletion: Ensure users can delete images from their listings.
-   - TestImageDisplay: Verify that images are correctly displayed in listings.
-   - TestImageLimit: Ensure there's a limit to the number of images per listing.
-7. Navigation and UI Elements [NavigationAndResponsiveness.java](craigslisttester/src/test/java/fgcuvladtyler/NavigationAndResponsiveness.java)
-   - TestHeaderLinks: Verify that header links (home, my account, post a listing, etc.) work.
-   - TestFooterLinks: Check that footer links (about, terms of use, privacy policy, etc.) are accessible.
-   - TestMobileResponsive: Verify the website is responsive on mobile devices.
-   - TestBreadcrumbNavigation: Test the functionality of breadcrumb navigation for ease of use.
-8. Accessibility compliance [Accessibility.java](craigslisttester/src/test/java/fgcuvladtyler/Accessibility.java)
-   - TestScreenReaderCompatibility: Verify the site's compatibility with screen readers.
-   - TestKeyboardNavigation: Ensure that the website can be navigated using keyboard commands alone.
-   - TestContrastRatio: Check that text and background color contrasts meet WCAG.
-   - TestAltTextForImages: Ensure all images have descriptive alt texts for users who rely on screen readers.
+5. Web Page Sites [WorldWideSites.java](craigslisttester/src/test/java/fgcuvladtyler/WorldWideSites.java)
+   - TestAboutCraigslistTitle: Verify Title is correct.
+   - TestAboutCraigslistContent: Verify Content is present on page.
+   - TestAboutCraigslistFooter: Verify footer links are correct.
+   - TestMapTest: Verify the map is present on load.
+6. Homepage [Homepage.java](craigslisttester/src/test/java/fgcuvladtyler/Homepage.java)
+   - TestVerifyHomePageTitle: Verify homepage title is correct.
+   - TestVerifyFooterLinks: Verify footer links are correct.
+   - TestLanguageLinksText: Verify support for multiple languages.
+   - TestLogo: Verify logo is present.
+7. Events & Calendar [EventsCalendar.java](craigslisttester/src/test/java/fgcuvladtyler/EventsCalendar.java)
+   - TestEventCalendarLink: Test calendar events link works.
+   - TestEventCalendarFavoriteButtonTest: Test favorites button works.
+   - TestEventCalendarSearch: Test calendar/events search works.
+   - TestEventsCheckBox: Test filter checkboxes work.
+8. About Section [AboutSection.java](craigslisttester/src/test/java/fgcuvladtyler/AboutSection.java)
+   - TestAboutSection: Verify the about page loads.
+   - TestTOS: Verify TOS page loads.
+   - TestFAQ: Verify FAQ page loads
+   - TestPrivacyPolicy: Verify Privacy Policy page loads.
 
 ---
 #### Running the tests

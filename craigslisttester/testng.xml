@@ -2,14 +2,14 @@
 <suite name="CraigslistSuite">
     <test name="ComprehensiveTests">
         <classes>
-            <!-- <class name="fgcuvladtyler.Signup">
+            <class name="fgcuvladtyler.Signup">
                 <methods>
                     <include name="testSignUpPage"/>
                     <include name="testSignUpFunctionality"/>
                     <include name="testLoginInFunctionality"/>
                     <include name="testForgotPasswordFunctionality"/>
                 </methods>
-            </class> -->
+            </class>
             <class name="fgcuvladtyler.ListingsAndSearch">
                 <methods>
                     <include name="testSearchBar"/>
@@ -18,7 +18,7 @@
                     <include name="testListingDetails"/>
                 </methods>
             </class>
-            <!-- <class name="fgcuvladtyler.Posting">
+            <class name="fgcuvladtyler.Posting">
                 <methods>
                     <include name="testPostListingPage"/>
                     <include name="testPostListingFunctionality"/>
@@ -67,7 +67,7 @@
                     <include name="testPrivacyPolicy"/>
                     <include name="testHelp"/>
                 </methods>
-            </class> -->
+            </class>
         </classes>
     </test>
 </suite>

@@ -21,8 +21,6 @@ public class Homepage extends Setup {
         Assert.assertEquals(actualTitle, expectedTitle, "The title does not match the expected title.");
 
 
-        // TODO: implement some kind of homepage test
-
     }
     @Test (priority = 1)
     public void verifyFooterLinks() {
@@ -100,8 +98,7 @@ public class Homepage extends Setup {
     }
     @Test (priority = 4)
     public void testLogo() {
-        // Navigate to the webpage you want to test
-        // Find the logo element
+
         driver.get("https://www.craigslist.com");
         sleep(4000);
         WebElement logo = driver.findElement(By.id("logo"));
