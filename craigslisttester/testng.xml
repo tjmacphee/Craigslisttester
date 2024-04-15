@@ -63,7 +63,7 @@
                 <methods>
                     <include name="testAboutSection"/>
                     <include name="testTermofUse"/>
-                    <include name="FAQ"/>
+                    <include name="testFrequentlyAskedQuestions"/>
                     <include name="testPrivacyPolicy"/>
                     <include name="testHelp"/>
                 </methods>
