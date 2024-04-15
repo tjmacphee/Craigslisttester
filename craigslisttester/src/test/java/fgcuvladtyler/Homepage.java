@@ -26,7 +26,7 @@ public class Homepage extends Setup {
     }
     @Test (priority = 1)
     public void verifyFooterLinks() {
-       // driver.get("https://www.craigslist.com");
+        driver.get("https://www.craigslist.com");
         sleep(1500);
 
         WebElement footer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("footer")));
@@ -100,7 +100,7 @@ public class Homepage extends Setup {
     }
     @Test (priority = 4)
     public void testLogo() {
-        // Navigate to the webpage you want to tests
+        // Navigate to the webpage you want to test
         // Find the logo element
         driver.get("https://www.craigslist.com");
         sleep(4000);
