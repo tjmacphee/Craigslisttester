@@ -38,13 +38,11 @@ public class ListingsAndSearch extends Setup {
         // Wait to see if the div.category-selector->div->button->span.label has the same text as the categoryLabel
         WebElement selectedCategory = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'category-selector')]//div//button//span[contains(@class,'label')]")));
         Assert.assertEquals(categoryText, selectedCategory.getText(), "The selected category does not match the expected category.");
-        sleep(10000);
     }
 
     @Test (priority = 3)
     public void testLocationFilter() {
         driver.get("https://fortmyers.craigslist.org/search/sss?query=macbook%20air#search=1~gallery~0~2");
-        sleep(4000);
         // Reset the category from above to test to first index
         WebElement categorySelector = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'category-selector')]")));
         categorySelector.click();
@@ -52,16 +50,17 @@ public class ListingsAndSearch extends Setup {
         WebElement category = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//span[contains(text(),'all')]")));
         category.click();
         categorySelector.click();
+        
         // Click on the location picker and capture text value
         WebElement locationPicker = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'subarea-selector')]")));
         locationPicker.click();
-        locationPicker.click();
 
         // Find the div.items, then click on the second button
-        WebElement location = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'items')]//span[contains(@class,'label')])[2]")));
+        WebElement location = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='items']//span[contains(@class,'label')])")));
         String locationText = location.getText();
         location.click();
 
+        sleep(2000);
         // Compare that the location picker crumb contains the same text as the locationText
         WebElement locationPickerCrumb = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'subarea-selector')]//span[contains(@class,'label')]")));
         Assert.assertEquals(locationText, locationPickerCrumb.getText(),  "The selected location does not match the expected location.");
