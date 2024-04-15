@@ -12,7 +12,9 @@ public class EventCalendar extends Setup {
         driver.get("https://fortmyers.craigslist.org/");
         driver.findElement(By.xpath("//*[@id='calban']/a")).click();
         String url = driver.getCurrentUrl();
+        String expectedUrl = "https://fortmyers.craigslist.org/search/eee";
         System.out.println(url);
+        Assert.assertEquals(url, expectedUrl, "The URL does not match the expected URL.");
     }
 
     @Test(priority = 2)
@@ -49,6 +51,10 @@ public class EventCalendar extends Setup {
         driver.findElement(By.name("bundleDuplicates")).click();
       // Check if the checkbox is selected, if not, select it
         sleep(5000);
+        Assert.assertTrue(driver.findElement(By.name("srchType")).isSelected());
+        Assert.assertTrue(driver.findElement(By.name("hasPic")).isSelected());
+        Assert.assertTrue(driver.findElement(By.name("postedToday")).isSelected());
+        Assert.assertTrue(driver.findElement(By.name("bundleDuplicates")).isSelected());
 
     }
 
