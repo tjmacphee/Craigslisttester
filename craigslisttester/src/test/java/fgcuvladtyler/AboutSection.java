@@ -42,7 +42,7 @@ public class AboutSection extends Setup{
   }
 
   @Test(priority = 3)
-  public void FAQ() throws IOException {
+  public void testFrequentlyAskedQuestions() throws IOException {
     driver.get("https://www.craigslist.org/about/help/faqs/");
     String currentUrl = driver.getCurrentUrl();
 
