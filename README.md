@@ -69,3 +69,6 @@ In case of a test failure, view the [TestSuite.txt](craigslisttester/target/sure
   - `mvn command is not recognized as an internal or external command`
     - Maven is missing from your system path [Maven/Java Path setup](https://www.youtube.com/watch?v=RfCWg5ay5B0https://www.youtube.com/watch?v=RfCWg5ay5B0)
   - The video above also goes through setting up java/jdk with it's path settings too
+  - `"chromedriver" can't be opened because Apple cannot check it for malicious software`
+    - Apple has quarantined the file, run the following command
+      - `xattr -d com.apple.quarantine <path to chromedriver>`
